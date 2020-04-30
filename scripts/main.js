@@ -151,18 +151,16 @@ $(document).ready(function(){
         });
       }
 
-    // Show/hide more tours
-
-    $('#showMore').click(function(){
-    $("#tourTableMore").slideToggle();
-    });
-
-
     // Animation on scroll configuration
 
     AOS.init({
         once: true,
         duration: 800
-    }); 
+    });
+
+    // Disable download control in video 
+
+    $('video').controlsList.remove('nodownload');
+
 
 });
