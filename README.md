@@ -8,7 +8,7 @@
 
 # **1. Wprowadzenie**
 
-### Projekt przedstawia stronę zespołu nu-metalowego **KoRn**. Witryna została przygotowana w oparciu o podstawowe technologie, powszechnie znane frameworki, a także dodatkowe biblioteki:
+Projekt przedstawia stronę zespołu nu-metalowego **KoRn**. Witryna została przygotowana w oparciu o podstawowe technologie, powszechnie znane frameworki, a także dodatkowe biblioteki:
 
 * HTML5
 * CSS3
@@ -19,11 +19,11 @@
 
 # **2. Budowa strony**
 
-### Strona została wykonana w stylu *one-page*, nie posiada ona więc dodatkowych podstron, a odnośniki z menu powodują płynne przejście do poszczególnych sekcji.
+Strona została wykonana w stylu *one-page*, nie posiada ona więc dodatkowych podstron, a odnośniki z menu powodują płynne przejście do poszczególnych sekcji.
 
 ## **2.1 Nawigacja**
 
-### Pasek menu przygotowany został w podobny sposób jak standardowa nawigacja znana z Bootstrapa. Linki wyświetlane są horyzontalnie dopóki rozdzielczość ekranu jest większa, niż ustalona w media queries dla urządzeń mobilnych. Poniżej tej rozdzielczości pojawia się tzw. *"hamburger"*, który powiązany jest ze zdarzeniem ```slideToggle()```. Dla uzyskania efektu animacji przycisku, skorzystano z gotowych efektów udostępnionych przez Jonathana Suh'a na [jego stronie](https://jonsuh.com/hamburgers/ "Hamburgers").
+asek menu przygotowany został w podobny sposób jak standardowa nawigacja znana z Bootstrapa. Linki wyświetlane są horyzontalnie dopóki rozdzielczość ekranu jest większa, niż ustalona w media queries dla urządzeń mobilnych. Poniżej tej rozdzielczości pojawia się tzw. *"hamburger"*, który powiązany jest ze zdarzeniem ```slideToggle()```. Dla uzyskania efektu animacji przycisku, skorzystano z gotowych efektów udostępnionych przez Jonathana Suh'a na [jego stronie](https://jonsuh.com/hamburgers/ "Hamburgers").
 
 <p align="center">
   <img src="images/menu.gif">
@@ -39,7 +39,7 @@
   });
 ```
 
-### By zapewnić lepszą przejrzystośc nawigacji, rozbudowano ją o sposób wyświetlania podczas zmiany orientacji na urządzeniach mobilnych na tzw. *landscape view*, tak by odnośniki rozmieszczone były w jednej linii:
+By zapewnić lepszą przejrzystośc nawigacji, rozbudowano ją o sposób wyświetlania podczas zmiany orientacji na urządzeniach mobilnych na tzw. *landscape view*, tak by odnośniki rozmieszczone były w jednej linii:
 
 <br>
 
@@ -72,7 +72,7 @@
 
 ```
 
-### Oprócz tego dodatkowy efekt stanowi zmiana przezroczystości tła oraz rozmiaru tekstu i loga podczas scrollowania. Efekt ten uzyskano stosując własność ```scrollTop()``` obiektu documentElement. Pozwala ona na określić liczbę pikseli, o które element został przewinięty w górę. W tym przypadku wystarczyło wykrycie, czy liczba pikseli jest większa od 0:
+Oprócz tego dodatkowy efekt stanowi zmiana przezroczystości tła oraz rozmiaru tekstu i loga podczas scrollowania. Efekt ten uzyskano stosując własność ```scrollTop()``` obiektu documentElement. Pozwala ona na określić liczbę pikseli, o które element został przewinięty w górę. W tym przypadku wystarczyło wykrycie, czy liczba pikseli jest większa od 0:
 
 <br>
 
@@ -121,7 +121,7 @@ $(window).scroll(function(){
 });
 ```
 
-### Do wpomnianego wcześniej płynnego przejścia do wybranej z menu sekcji rownież użyto właściwości ```scrollTop()```, tym razem jednak ustawiając jej wartość, a nie odczytując jak poprzednio. Do określenia tej wartości skorzystano z metody ```offset().top``` i atrybutu ```href``` który jest stanowi odpowiednikiem identyfikatorów poszczególnych sekcji strony.
+Do wpomnianego wcześniej płynnego przejścia do wybranej z menu sekcji rownież użyto właściwości ```scrollTop()```, tym razem jednak ustawiając jej wartość, a nie odczytując jak poprzednio. Do określenia tej wartości skorzystano z metody ```offset().top``` i atrybutu ```href``` który jest stanowi odpowiednikiem identyfikatorów poszczególnych sekcji strony.
 
 ```JavaScript
 $("a[href^='#']").click(function(e) {
@@ -146,7 +146,7 @@ $("a[href^='#']").click(function(e) {
 
 ## **2.2 Sekcja "Band"**
 
-### Kontenery z sylwetkami członków zespołu wykorzystują efekty z bilioteki *AOS*, takie jak *fade-up*, czy *fade-down*. Efekty te przypisywane są poprzez atrybut ```data-aos```. Dodatkowo za pomocą ```data-aos-delay``` określone mogą zostać opóźnienia wykonania poszczególnych animacji. Pełną listę efektów biblioteki *AOS* oraz jej parametrów do edycji można znaleźć [pod tym adresem](https://michalsnik.github.io/aos/ "Animate On Scroll Library").
+Kontenery z sylwetkami członków zespołu wykorzystują efekty z bilioteki *AOS*, takie jak *fade-up*, czy *fade-down*. Efekty te przypisywane są poprzez atrybut ```data-aos```. Dodatkowo za pomocą ```data-aos-delay``` określone mogą zostać opóźnienia wykonania poszczególnych animacji. Pełną listę efektów biblioteki *AOS* oraz jej parametrów do edycji można znaleźć [pod tym adresem](https://michalsnik.github.io/aos/ "Animate On Scroll Library").
 
 ```html
 <div class="strip" data-aos="fade-up">
@@ -159,7 +159,7 @@ $("a[href^='#']").click(function(e) {
 </div>
 ```
 
-### W celu zainicjalizowania biblioteki *AOS* należy do pliku HTML załączyć poniższy skrypt:
+W celu zainicjalizowania biblioteki *AOS* należy do pliku HTML załączyć poniższy skrypt:
 
 ```JavaScript
 AOS.init({
@@ -177,7 +177,7 @@ AOS.init({
 
 <br>
 
-### Sekcja *"Band"* zmienia się w sposób responsywny. Poniżej 768px kontener przekształca się w tzw. *"karuzelę"* w której wyświetlanych jest jednocześnie tylko trzech członków zespołu, bądź jeden dla rozdzielczości jeszcze mniejszych. Karuzelą można sterować za pomocą przycisków w lewą oraz prawą stronę. W przypadku braku akcji, karuzela działa automatycznie, przesuwając się w lewo zgodnie z ustalonym interwałem.
+Sekcja *"Band"* zmienia się w sposób responsywny. Poniżej 768px kontener przekształca się w tzw. *"karuzelę"* w której wyświetlanych jest jednocześnie tylko trzech członków zespołu, bądź jeden dla rozdzielczości jeszcze mniejszych. Karuzelą można sterować za pomocą przycisków w lewą oraz prawą stronę. W przypadku braku akcji, karuzela działa automatycznie, przesuwając się w lewo zgodnie z ustalonym interwałem.
 
 ```JavaScript
 var interval = window.setInterval(rotateStrips, 5000);
@@ -201,7 +201,7 @@ function rotateStrips(){
 }
 ```
 
-### Podczas automatycznego wykonywania przesunięcia karuzeli, zdarzenia ```click``` przycisków są wyłączane i ponownie uruchamiane po jego jego zakończeniu. Karuzela działa w ten sposób, że co 5s powtarzana jest funkcja ```rotateStrips()```. W funkcji tej wykryte zostaje pierwsze dziecko klasy ```strip```, a nastepnie przesunięte jest ono w lewo o odległość odpowiadającą jego szerokości. Kolejnym krokiem jest ustawienie dziecka zaraz za ostatnim elementem o klasie ```strip```.
+Podczas automatycznego wykonywania przesunięcia karuzeli, zdarzenia ```click``` przycisków są wyłączane i ponownie uruchamiane po jego jego zakończeniu. Karuzela działa w ten sposób, że co 5s powtarzana jest funkcja ```rotateStrips()```. W funkcji tej wykryte zostaje pierwsze dziecko klasy ```strip```, a nastepnie przesunięte jest ono w lewo o odległość odpowiadającą jego szerokości. Kolejnym krokiem jest ustawienie dziecka zaraz za ostatnim elementem o klasie ```strip```.
 
 <br>
 
@@ -211,7 +211,7 @@ function rotateStrips(){
 
 <br>
 
-### W podobny sposób wykonywane jest manualne przesunięcie. Poniżej przedstawiono przykładowy kod dla przesunięcia w lewo:
+W podobny sposób wykonywane jest manualne przesunięcie. Poniżej przedstawiono przykładowy kod dla przesunięcia w lewo:
 
 ```JavaScript
 function leftStrip(){
@@ -235,7 +235,7 @@ function leftStrip(){
 
 ## **2.3 Sekcja "Music"**
 
-### W sekcji *"Music"* zaprezentowane zostały okładki albumów. Po najechaniu na nie, wysokośc div'a o klasie ```albumFooter``` zostaje rozciągnięta na 100% kafelki, odsłaniając tym samym szczegóły dotyczące tytułu albumu, roku jego wydania oraz odnośnikiem do Spotify. Dodatkowy efekt stanowi tutaj zmiana przezroczystości footer'a oraz skali szarości obrazu w tle.
+W sekcji *"Music"* zaprezentowane zostały okładki albumów. Po najechaniu na nie, wysokośc div'a o klasie ```albumFooter``` zostaje rozciągnięta na 100% kafelki, odsłaniając tym samym szczegóły dotyczące tytułu albumu, roku jego wydania oraz odnośnikiem do Spotify. Dodatkowy efekt stanowi tutaj zmiana przezroczystości footer'a oraz skali szarości obrazu w tle.
 
 <br>
 
@@ -272,7 +272,7 @@ function leftStrip(){
 
 ## **2.4 Sekcja "Video"**
 
-### Część strony zatytułowana *"Video"* składa się z *"thumbnail'ów"* odłowujących się do koncertów, teledysków i wywiadów przeprowadzanych z zespołem. Kontener o klasie ```videoContainer``` zbudowany jest z przycisku Play, znacznika ```video``` wskazującego na poszczególne klipy oraz ```videoPoster'a``` stanowiącego tło thumbnail'a. 
+Część strony zatytułowana *"Video"* składa się z *"thumbnail'ów"* odłowujących się do koncertów, teledysków i wywiadów przeprowadzanych z zespołem. Kontener o klasie ```videoContainer``` zbudowany jest z przycisku Play, znacznika ```video``` wskazującego na poszczególne klipy oraz ```videoPoster'a``` stanowiącego tło thumbnail'a. 
 
 ```HTML
 <div class="videoContainer" data-aos="fade-zoom-in">
@@ -284,7 +284,7 @@ function leftStrip(){
 </div>
 ```
 
-### Zastosowanie atrybutu ```controlList``` umożliwia odwołanie się do właściwości odtwarzacza, a w tym między innymi do parametru odpowiedzialnego za zablokowanie możliwości pobrania pliku. Ustawienie ```disablePictureInPicture``` blokuje zaś wyświetlanie video w tzw. "pływającym oknie" będącym zawsze na wierzchu w stosunku do przeglądarki oraz innych aplikacji. Właściwość ```preload="none"``` zapobiega ładowaniu plików podczas wgrywania się strony.
+Zastosowanie atrybutu ```controlList``` umożliwia odwołanie się do właściwości odtwarzacza, a w tym między innymi do parametru odpowiedzialnego za zablokowanie możliwości pobrania pliku. Ustawienie ```disablePictureInPicture``` blokuje zaś wyświetlanie video w tzw. "pływającym oknie" będącym zawsze na wierzchu w stosunku do przeglądarki oraz innych aplikacji. Właściwość ```preload="none"``` zapobiega ładowaniu plików podczas wgrywania się strony.
 
 ```JavaScript
 $("video").each(function(){
@@ -302,7 +302,7 @@ $("video").each(function(){
 
 <br>
 
-### Przyciśnięcie przycisku Play powoduje rozpoczęcie odtwarzania video w trybie pełnoekranowym. Zamknięcie trybu pełnoekranowego jest równoznaczne z zatrzymaniem video. Działanie to umożliwia poniższy kod:
+Przyciśnięcie przycisku Play powoduje rozpoczęcie odtwarzania video w trybie pełnoekranowym. Zamknięcie trybu pełnoekranowego jest równoznaczne z zatrzymaniem video. Działanie to umożliwia poniższy kod:
 
 ```JavaScript
 $('.videoButton').click(function(){
@@ -319,7 +319,7 @@ $('.video').bind('webkitfullscreenchange mozfullscreenchange fullscreenchange', 
 
 ## **2.5 Sekcja "Tour"**
 
-### Ostatnią część strony stanowi tabela z rozpisaną trasą koncertową zespołu. W celu zachowania jej poprawnego i sensownego wyświetlania na urządzeniach mobilnych, najmniej istotna kolumna jest ukrywana:
+Ostatnią część strony stanowi tabela z rozpisaną trasą koncertową zespołu. W celu zachowania jej poprawnego i sensownego wyświetlania na urządzeniach mobilnych, najmniej istotna kolumna jest ukrywana:
 
 ```css
 @media screen and (max-width: 575.98px) {
