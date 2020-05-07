@@ -580,14 +580,14 @@ footer{
   #menu{
     display: none;
   }
-  @media screen and (orientation: portrait){
+  @media (orientation: portrait){
     .menuItem{
       display: block;
       text-align: center;
       margin: 1.8em 0;
     }
   }
-  @media screen and (orientation: landscape){
+  @media (orientation: landscape){
     .menuItem{
       margin: 1.8em 0;
     }

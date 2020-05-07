@@ -13,7 +13,7 @@ $(document).ready(function(){
     // Hamburger effect and menu slider
 
     var $hamburger = $(".hamburger");
-    $hamburger.on("click", function(e) {
+    $hamburger.on("click", function() {
         $hamburger.toggleClass("is-active"); 
         $("#menu").slideToggle();
     });
@@ -38,9 +38,7 @@ $(document).ready(function(){
         }
     });
 
-
-
-    // Slide down the header when scrolling
+    // Resize the navigation when scrolling
 
     $(window).scroll(function(){
         if($(document.documentElement).scrollTop() > 0) {
@@ -158,9 +156,11 @@ $(document).ready(function(){
         duration: 800
     });
 
-    // Disable download control in video 
-
-    $('video').controlsList.remove('nodownload');
-
+    // Disable download control and picture in picture in each video 
+    $("video").each(function(){
+        $(this).attr('controlsList','nodownload');
+        $(this).attr('disablePictureInPicture','true');
+        $(this).load();
+    });
 
 });
