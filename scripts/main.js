@@ -79,7 +79,7 @@ $(document).ready(function(){
 
     // Smooth auto-scrolling
 
-    $("a[href^='#']").click(function(e) {
+    $("a[href^='#']").click(function() {
         e.preventDefault(); 
         if($(this).attr("href") == "#top"){
             $("body, html").animate({scrollTop: 0}, 1000, 'swing');

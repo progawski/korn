@@ -30,10 +30,9 @@
 </p>
 
 ```JavaScript
-  // Hamburger effect and menu slider
 
   var $hamburger = $(".hamburger");
-  $hamburger.on("click", function(e) {
+  $hamburger.on("click", function() {
       $hamburger.toggleClass("is-active"); 
       $("#menu").slideToggle();
   });
