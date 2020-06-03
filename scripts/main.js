@@ -1,4 +1,7 @@
 $(document).ready(function(){
+
+    // Open video in fullscreen mode on click and pause i it is closed
+
     $('.videoButton').click(function(){
         $(this).next('.video').get(0).play();
         $(this).next('.video').get(0).webkitRequestFullScreen();
@@ -18,13 +21,16 @@ $(document).ready(function(){
         $("#menu").slideToggle();
     });
 
-    // Delete inline style added after slideToggle() and change hamburger icon to non-active, when resize (>=768)
+    // Change container to carousel when window width is less or equal to 992px
 
     if($(window).width() <= 992) {
         $("#carouselContainer").addClass("carousel");
     } else{
         $("#carouselContainer").removeClass("carousel");
     }
+
+    // Change container to carousel while resizing when window width is less or equal to 992px
+    // Delete inline style added after slideToggle() and change hamburger icon to non-active, when resize (>=768)
 
     $(window).resize(function() {
         if($(window).width() <= 992) {
