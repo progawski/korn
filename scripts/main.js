@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-    // Open video in fullscreen mode on click and pause i it is closed
+    // Open video in fullscreen mode on click and pause if it is closed
 
     $('.videoButton').click(function(){
         $(this).next('.video').get(0).play();
@@ -110,7 +110,7 @@ $(document).ready(function(){
         var width = firstStrip.outerWidth();
         
         firstStrip.animate({marginLeft: -width}, 1000, function(){
-            var lastStrip = $('.carousel').find('.strip:last')
+            var lastStrip = $('.carousel').find('.strip:last');
             lastStrip.after(firstStrip);
             firstStrip.css({marginLeft: 4});
             $('#nextStrip').on('click', leftStrip);
@@ -123,13 +123,13 @@ $(document).ready(function(){
         $('#nextStrip').off('click');
         $('#previousStrip').off('click');
 
-        var currentStrip = $('.carousel').find('.strip:first');
-        var width = currentStrip.outerWidth();
+        var firstStrip = $('.carousel').find('.strip:first');
+        var width = firstStrip.outerWidth();
 
-        currentStrip.animate({marginLeft: -width}, 1000, function(){
-            var lastStrip = $('.carousel').find('.strip:last')
-            lastStrip.after(currentStrip);
-            currentStrip.css({marginLeft: 4});
+        firstStrip.animate({marginLeft: -width}, 1000, function(){
+            var lastStrip = $('.carousel').find('.strip:last');
+            lastStrip.after(firstStrip);
+            firstStrip.css({marginLeft: 4});
             $('#nextStrip').on('click', leftStrip);
             $('#previousStrip').on('click', rightStrip);
             interval = window.setInterval(rotateStrips, 5000);
@@ -141,14 +141,14 @@ $(document).ready(function(){
         $('#nextStrip').off('click');
         $('#previousStrip').off('click');
 
-        var currentStrip = $('.carousel').find('.strip:first');
-        var width = currentStrip.outerWidth();
-        var previousStrip = $('.carousel').find('.strip:last')
+        var firstStrip = $('.carousel').find('.strip:first');
+        var width = firstStrip.outerWidth();
+        var lastStrip = $('.carousel').find('.strip:last');
 
-        currentStrip.before(previousStrip);
-        previousStrip.css({marginLeft: -width})
+        firstStrip.before(lastStrip);
+        lastStrip.css({marginLeft: -width});
         
-        previousStrip.animate({marginLeft: 4}, 1000, function(){
+        lastStrip.animate({marginLeft: 4}, 1000, function(){
             $('#nextStrip').on('click', leftStrip);
             $('#previousStrip').on('click', rightStrip);
             interval = window.setInterval(rotateStrips, 5000);
